@@ -1,0 +1,1 @@
+export const connectionStr="mongodb+srv://naitiksalvi13:naitiksalvi@cluster0.r0kjw.mongodb.net/RealEstateData?retryWrites=true&w=majority&appName=Cluster0"
