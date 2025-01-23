@@ -25,7 +25,7 @@ const Footer = () => {
                 <p className='lg:max-w-sm py-8 text-sm'>{FOOTER.description}</p>
                 <div className="flex flex-wrap gap-4 my-10 ">
                     <Link href="#" className='text-sm hover:text-neutral-500'><FacebookIcon/></Link>
-                    <Link href="#" className='text-sm hover:text-neutral-500'> <InstagramIcon/></Link>
+                    <Link href="https://www.instagram.com/shivkrupaconstruction2024?igsh=ODRsdWgwZWo3b2Rp" className='text-sm hover:text-neutral-500'> <InstagramIcon/></Link>
                     <Link href="#" className='text-sm hover:text-neutral-500'><GithubIcon/></Link>
                     <Link href="#" className='text-sm hover:text-neutral-500'><TwitterIcon/></Link>
                    

@@ -1,22 +1,24 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation"; // Import useRouter for navigation
+import { useRouter } from "next/navigation"; 
 import Link from "next/link";
 
 export default function Page() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   const [users, setUsers] = useState([]);
-  const router = useRouter(); // Initialize the useRouter hook
+  const router = useRouter(); 
 
   // Fetch user data on component mount
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/userlogin");
+        const response = await fetch("/api/userlogin");
         const data = await response.json();
+        console.log(data.result)
         setUsers(data.result || []);
+        
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
@@ -29,14 +31,21 @@ export default function Page() {
       alert("Email and Password must be required!");
       return;
     }
-
     const userData = users.filter((item) => item.email === email && item.password === password);
-    if (userData.length === 0) {
+    if (email === 'admin123@gmail.com' && password === 'admin123') {
+      // Save token or user info in cookies/session
+      document.cookie = 'isAdmin=true; path=/;';
+      router.push('/admin');
+    } 
+     
+    else if (userData.length === 0) {
       alert("User Not Found!");
     } else {
+      //document.cookie = 'isAdmin=false; path=/;';
       alert("You are Successfully Logged In!");
       router.push("/"); // Redirect to the root page
     }
+   
   };
 
   return (
@@ -48,6 +57,7 @@ export default function Page() {
           value={email}
           type="email"
           onChange={(e) => setEmail(e.target.value)}
+          
           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <input

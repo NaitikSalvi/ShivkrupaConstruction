@@ -5,6 +5,7 @@ export const NAV_LINKS = [
   { title: "About", url: "#About" },
   { title: "Reviews", url: "#Reviews" },
   { title: "Faq", url: "#Faq" },
+  { title: "Post Property", url: "/listYourProperty" },
 ];
 
 export const HERO = {
@@ -35,7 +36,7 @@ export const HOW_IT_WORKS = {
 
 export const FEATURED_PROPERTIES = [
   {
-    
+    id:"1",
     name: "Beautiful Family Home",
     price: 350000,
     rating: 4.8,
@@ -43,7 +44,7 @@ export const FEATURED_PROPERTIES = [
     image: "/image-1.jpg",
   },
   {
-
+    id:"2",
     name: "Spacious City Apartment",
     price: 250000,
     rating: 4.5,
@@ -51,6 +52,7 @@ export const FEATURED_PROPERTIES = [
     image: "/image-2.jpg",
   },
   {
+    id:"3",
     name: "Cozy Suburban House",
     price: 280000,
     rating: 4.7,
@@ -58,6 +60,7 @@ export const FEATURED_PROPERTIES = [
     image: "/image-3.jpg",
   },
   {
+    id:"4",
     name: "Luxury Beachfront Villa",
     price: 950000,
     rating: 4.9,
@@ -65,6 +68,7 @@ export const FEATURED_PROPERTIES = [
     image: "/image-4.jpg",
   },
   {
+    id:"5",
     name: "Mountain View Retreat",
     price: 420000,
     rating: 4.6,
@@ -72,6 +76,7 @@ export const FEATURED_PROPERTIES = [
     image: "/image-5.jpg",
   },
   {
+    id:"6",
     name: "Urban Loft Apartment",
     price: 320000,
     rating: 4.7,
@@ -79,6 +84,7 @@ export const FEATURED_PROPERTIES = [
     image: "/image-6.jpg",
   },
   {
+    id:"7",
     name: "Rural Farmhouse",
     price: 380000,
     rating: 4.5,
@@ -86,6 +92,7 @@ export const FEATURED_PROPERTIES = [
     image: "/image-7.jpg",
   },
   {
+    id:"8",
     name: "Modern City Penthouse",
     price: 580000,
     rating: 4.9,
@@ -93,6 +100,7 @@ export const FEATURED_PROPERTIES = [
     image: "/image-8.jpg",
   },
   {
+    id:"9",
     name: "Countryside Cottage",
     price: 290000,
     rating: 4.6,
@@ -100,6 +108,7 @@ export const FEATURED_PROPERTIES = [
     image: "/image-9.jpg",
   },
   {
+    id:"10",
     name: "Seaside Bungalow",
     price: 410000,
     rating: 4.8,
@@ -107,6 +116,7 @@ export const FEATURED_PROPERTIES = [
     image: "/image-10.jpg",
   },
   {
+    id:"11",
     name: "Lakefront Cabin",
     price: 340000,
     rating: 4.7,
@@ -114,6 +124,7 @@ export const FEATURED_PROPERTIES = [
     image: "/image-11.jpg",
   },
   {
+    id:"12",
     name: "Historic Townhouse",
     price: 470000,
     rating: 4.8,
@@ -277,7 +288,7 @@ export const FOOTER = {
       name: "Buy",
       links: [
         { title: "Search Properties", url: "#" },
-        { title: "Mortgage Calculator", url: "#" },
+        { title: "Mortgage Calculator", url: "/MortgageCalculator" },
         { title: "Buyer's Guide", url: "#" },
         { title: "Home Buying Tips", url: "#" },
         { title: "FAQs for Buyers", url: "#" },
@@ -286,7 +297,7 @@ export const FOOTER = {
     {
       name: "Sell",
       links: [
-        { title: "List Your Property", url: "#" },
+        { title: "List Your Property", url: "/listYourProperty" },
         { title: "Seller's Guide", url: "#" },
         { title: "Home Selling Tips", url: "#" },
         { title: "Home Evaluation", url: "#" },
