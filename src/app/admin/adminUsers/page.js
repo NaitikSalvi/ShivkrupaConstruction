@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Oval } from "react-loader-spinner"; // Import Oval loader
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast"
 import {
   Dialog,
   DialogClose,
@@ -25,6 +26,7 @@ import {
 } from "@/components/ui/alert-dialog";
 
 const UserManagement = () => {
+  const { toast } = useToast()
   const [users, setUsers] = useState([]);
   const [loadingId, setLoadingId] = useState(null); // Track which delete button is loading
   const [editData, setEditData] = useState({}); // Track data for editing
@@ -55,22 +57,37 @@ const UserManagement = () => {
         },
         body: JSON.stringify(editData),
       });
-
+  
       const result = await response.json();
       const updatedUser = users.map((item) =>
         item._id === id ? { ...item, ...editData } : item
       );
       setUsers(updatedUser);
       if (result.success) {
+        toast({
+          title: "User updated successfully",  // Set a title
+          description: "The user's details have been updated.",  // Set a description
+          status: "success",  // Status can be success or error
+        });
       } else {
-        alert("Failed to update user!");
+        toast({
+          title: "Update failed",
+          description: "Failed to update the user.",
+          status: "error",
+        });
       }
     } catch (error) {
       console.error("Error editing user:", error);
+      toast({
+        title: "Error",
+        description: "An error occurred while updating the user.",
+        status: "error",
+      });
     } finally {
       setIsSubmitting(false);
     }
   };
+  
 
   const deleteUser = async (id) => {
     setLoadingId(id); // Set the loading state to true for the specific user

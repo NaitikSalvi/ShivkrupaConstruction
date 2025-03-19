@@ -7,6 +7,7 @@ import Navbar from '@/components/Navbar'
 import Reviews from '@/components/Reviews'
 import Services from '@/components/Services'
 import Footer from '@/components/Footer'
+import Chatbot from '@/components/Chatbot'
 import React from 'react'
 
 
@@ -22,7 +23,8 @@ export const Home = () => {
     <Reviews/>
     <Faq/>
     <Footer/>
-    </>
+    <Chatbot/>
+        </>
   )
 }
 

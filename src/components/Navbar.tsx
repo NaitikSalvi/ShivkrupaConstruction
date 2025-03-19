@@ -1,3 +1,7 @@
+/* The provided code is a TypeScript React component for a responsive navigation bar (Navbar) for a
+website. Here is a breakdown of what the code does: */
+/* The code provided is a TypeScript React component for a responsive navigation bar (Navbar) for a
+website. Here is a breakdown of what the code does: */
 "use client"
 import {Menu ,X} from "lucide-react"
 import { useState } from "react";

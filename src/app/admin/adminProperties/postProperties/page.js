@@ -94,45 +94,73 @@ const PostPropertyManagement = () => {
   };
 
   return (
-    <div className="p-4 sm:p-6">
+<div className="p-4 sm:p-6">
       <h2 className="text-2xl font-bold mb-4 text-center sm:text-left">
         Manage PostProperty
       </h2>
 
-      <div className="overflow-x-auto">
-        <table className="min-w-full bg-white shadow rounded">
+      {/* Table container with no horizontal scrolling */}
+      <div className="w-full">
+        <table className="table-auto w-full bg-white shadow rounded text-left border-collapse">
           <thead>
             <tr>
-              <th className="border px-2 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm">ID</th>
-              <th className="border px-2 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm">User Type</th>
-              <th className="border px-2 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm">Name</th>
-              <th className="border px-2 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm">Email</th>
-              <th className="border px-2 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm">Mobile</th>
-              <th className="border px-2 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm">Location</th>
-              <th className="border px-2 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm">Property Type</th>
-              <th className="border px-2 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm">Property Name</th>
-              <th className="border px-2 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm">Price</th>
-              <th className="border px-2 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm">Description</th>
-              <th className="border px-2 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm">Date of Post</th>
-              <th className="border px-2 py-1 sm:px-4 sm:py-2 text-xs sm:text-sm">Actions</th>
+              <th className="border px-2 py-2 text-xs sm:text-sm break-words">
+                ID
+              </th>
+              <th className="border px-2 py-2 text-xs sm:text-sm break-words">
+                User Type
+              </th>
+              <th className="border px-2 py-2 text-xs sm:text-sm break-words">
+                Name
+              </th>
+              <th className="border px-2 py-2 text-xs sm:text-sm break-words">
+                Email
+              </th>
+              <th className="border px-2 py-2 text-xs sm:text-sm break-words">
+                Mobile
+              </th>
+              <th className="border px-2 py-2 text-xs sm:text-sm break-words">
+                Location
+              </th>
+              <th className="border px-2 py-2 text-xs sm:text-sm break-words">
+                Property Type
+              </th>
+              <th className="border px-2 py-2 text-xs sm:text-sm break-words">
+                Property Name
+              </th>
+              <th className="border px-2 py-2 text-xs sm:text-sm break-words">
+                Price
+              </th>
+              <th className="border px-2 py-2 text-xs sm:text-sm break-words">
+                Description
+              </th>
+              <th className="border px-2 py-2 text-xs sm:text-sm break-words">
+                Date of Post
+              </th>
+              <th className="border px-2 py-2 text-xs sm:text-sm break-words">
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody>
             {property.map((item, index) => (
-              <tr key={index} className="text-xs sm:text-sm even:bg-gray-100 odd:bg-white">
-                <td className="border px-2 py-1 sm:px-4 sm:py-2">{index + 1}</td>
-                <td className="border px-2 py-1 sm:px-4 sm:py-2">{item.accountType}</td>
-                <td className="border px-2 py-1 sm:px-4 sm:py-2">{item.name}</td>
-                <td className="border px-2 py-1 sm:px-4 sm:py-2 break-words">{item.email}</td>
-                <td className="border px-2 py-1 sm:px-4 sm:py-2">{item.mobile}</td>
-                <td className="border px-2 py-1 sm:px-4 sm:py-2">{item.location}</td>
-                <td className="border px-2 py-1 sm:px-4 sm:py-2">{item.propertyType}</td>
-                <td className="border px-2 py-1 sm:px-4 sm:py-2">{item.propertyName}</td>
-                <td className="border px-2 py-1 sm:px-4 sm:py-2">{item.price}</td>
-                <td className="border px-2 py-1 sm:px-4 sm:py-2 break-words">{item.description}</td>
-                <td className="border px-2 py-1 sm:px-4 sm:py-2">{item.createdAt}</td>
-                <td className="border px-2 py-1 sm:px-4 sm:py-2">
-                  <div className="flex flex-wrap justify-center gap-2">
+              <tr
+                key={index}
+                className="text-xs sm:text-sm even:bg-gray-100 odd:bg-white"
+              >
+                <td className="border px-2 py-2">{index + 1}</td>
+                <td className="border px-2 py-2">{item.accountType}</td>
+                <td className="border px-2 py-2">{item.name}</td>
+                <td className="border px-2 py-2">{item.email}</td>
+                <td className="border px-2 py-2">{item.mobile}</td>
+                <td className="border px-2 py-2">{item.location}</td>
+                <td className="border px-2 py-2">{item.propertyType}</td>
+                <td className="border px-2 py-2">{item.propertyName}</td>
+                <td className="border px-2 py-2">{item.price}</td>
+                <td className="border px-2 py-2">{item.description}</td>
+                <td className="border px-2 py-2">{item.createdAt}</td>
+                <td className="border px-2 py-2">
+                  <div className="flex flex-wrap gap-2">
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button
@@ -189,6 +217,7 @@ const PostPropertyManagement = () => {
                           )}
                         </button>
                       </AlertDialogTrigger>
+
                       <AlertDialogContent>
                         <AlertDialogHeader>
                           <AlertDialogTitle>
@@ -197,7 +226,9 @@ const PostPropertyManagement = () => {
                         </AlertDialogHeader>
                         <AlertDialogDescription></AlertDialogDescription>
                         <AlertDialogFooter>
-                          <AlertDialogCancel onClick={() => setDeleteId(null)}>
+                          <AlertDialogCancel
+                            onClick={() => setDeleteId(null)}
+                          >
                             Cancel
                           </AlertDialogCancel>
                           <AlertDialogAction
